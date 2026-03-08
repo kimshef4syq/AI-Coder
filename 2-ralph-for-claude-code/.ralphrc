@@ -1,0 +1,31 @@
+# .ralphrc - Ralph 项目配置（平衡版）
+
+# 项目信息
+PROJECT_NAME="temp-vite"
+PROJECT_TYPE="typescript"
+
+# Claude Code 命令
+CLAUDE_CODE_CMD="claude"
+
+# 循环设置
+MAX_CALLS_PER_HOUR=50
+CLAUDE_TIMEOUT_MINUTES=10
+CLAUDE_OUTPUT_FORMAT="json"
+
+# 工具权限（放宽以支持 ralph-claude-code 自主开发）
+ALLOWED_TOOLS="Write,Read,Edit,Bash(git add *),Bash(git commit *),Bash(git diff *),Bash(git log *),Bash(git status),Bash(git status *),Bash(git push *),Bash(git pull *),Bash(git fetch *),Bash(git checkout *),Bash(git branch *),Bash(git stash *),Bash(git merge *),Bash(git tag *),Bash(npm *),Bash(npm run *),Bash(npm install *),Bash(npm test),Bash(pnpm *),Bash(pnpm run *),Bash(pnpm install *),Bash(pnpm test),Bash(pnpm build),Bash(pnpm dev),Bash(pnpm add *),Bash(npx *),Bash(pytest),Bash(ls *),Bash(cat *),Bash(echo *),Bash(mkdir *),Bash(cp *),Bash(mv *),Bash(rm -rf *),Bash(node *),Bash(tsc),Bash(vite *),Glob(src/**/*),Glob(*.md),Glob(*.json),Grep"
+
+# 会话管理（恢复 session continuity 以保持上下文）
+SESSION_CONTINUITY=true
+SESSION_EXPIRY_HOURS=24
+
+# 详细输出（显示 Loop context 信息）
+VERBOSE_PROGRESS=true
+
+# 任务源
+TASK_SOURCES="local"
+
+# Circuit breaker
+CB_NO_PROGRESS_THRESHOLD=2
+CB_SAME_ERROR_THRESHOLD=3
+CB_OUTPUT_DECLINE_THRESHOLD=50
